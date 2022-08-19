@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>eagle f.c</title>
+    <link rel="icon" href="https://archive.org/download/eaglefc/20190512_213858.png">
+</head>
+
+<style>
+    body {
+        font-size: 28px;
+    }
+    
+    ul {
+        background-color: black;
+        color: rgb(255, 255, 255);
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        color: rgb(247, 250, 250);
+        text-align: center;
+        padding: 20px 26px;
+        text-decoration: none;
+    }
+    
+    li a:hover {
+        background-color: green;
+    }
+    
+    .active {
+        background-color: green;
+    }
+    
+    p {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        background-size: 1000px;
+        background-image: linear-gradient(rgba(59, 50, 50, 0.8), rgba(53, 46, 46, 0.8)), url("data:image/jpeg;base64,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");
+    }
+    
+    h1 {
+        text-align: center;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="portfolio-menu"></div>
+    <ul>
+        <li><a class="active" href="home">HOME</a></li>
+        <li><a class=".players" href="players">PLAYERS</a></li>
+        <li><a href="contact">CONTACT</a></li>
+        <li><a href="match updates">MATCH UPDATES</a></li>
+
+    </ul>
+    </div>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtqXHeMmKd1YqcEODsIMVpiIPZ2y46G821sw&usqp=CAU" style width="1000px" height="1000px">
+
+    <p>"I learned all about life with a ball at my feet” – Ronaldinhobn <br> “The more difficult the victory, the greater the happiness in winning.” – Pelé <br>“You have to fight to reach your dream. You have to sacrifice and work hard for it.” – Lionel
+        Messi
+        <br> “I don’t have time for hobbies. At the end of the day, I treat my job as a hobby. It’s something I love doing.”- David Beckham<br> “When people succeed, it is because of hard work. Luck has nothing to do with success.” – Diego Maradona<br>        “The first 90 minutes are the most important.” – Bobby Robson<br> “I just hate losing and that gives you an extra determination to work harder.” – Wayne Rooney<br> “I once cried because I had no shoes to play soccer, but one day, I met a man who
+        had no feet.” – Zinedine Zidane<br> “There is no pressure when you are making a dream come true.” – Neymar<br> “Nobody who ever gave his best regretted it.” – George Halas"</p>
+
+    <a href="https://www.instagram.com/2022.eaglesfc/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a>
+    <h1> TEAM PLAYERS</h1>
+
+    <img src="C:\Users\Shweta\Desktop\python\images\golu.jpg" alt="golu" height="200px" width="200px">
+    <a href="https://www.instagram.com/golu_rawt/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a><br>
+
+    <img src="C:\Users\Shweta\Desktop\python\images\karan.jpg" alt="karan" height="200px" width="200px">
+    <a href="https://www.instagram.com/karankumar.1/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a><br>
+
+    <img src="C:\Users\Shweta\Desktop\python\images\aayush.jpg" alt="aayush" height="200px" width="200px">
+    <a href="https://www.instagram.com/ayushanmolkumar/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a><br>
+
+    <img src="C:\Users\Shweta\Desktop\python\images\amit.jpg" alt="amit" height="200px" width="200px">
+    <a href="https://www.instagram.com/amitaryan9322/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a><br>
+
+    <img src="C:\Users\Shweta\Desktop\python\images\yogesh.jpg" alt="yogesh" height="200px" width="200px">
+    <a href="https://www.instagram.com/_yogesh_rawat__/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a><br>
+
+    <img src="C:\Users\Shweta\Desktop\python\images\lallu.jpg" alt="ballu" height="200px" width="200px">
+    <a href="https://www.instagram.com/balwantsinghrawat444/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"><br>
+
+
+        <img src="C:\Users\Shweta\Desktop\python\images\suraj.jpg" alt="suraj" height="200px" width="200px">
+        <a href="https://www.instagram.com/iamsurajsk_0326/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a><br>
+
+
+        <img src="C:\Users\Shweta\Desktop\python\images\piyush.jpg" alt="piyush" height="200px" width="200px">
+        <a href="https://www.instagram.com/piyushchandra07/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a><br>
+
+        <img src="C:\Users\Shweta\Desktop\python\images\shahi.jpg" alt="tarun" height="200px" width="200px">
+        <a href="https://www.instagram.com/tarunshahi7/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a><br>
+
+
+        <img src="C:\Users\Shweta\Desktop\python\images\mohit.jpg" alt="mohit" height="200px" width="200px">
+        <a href="https://www.instagram.com/zaenmohit/"><img src="C:\Users\Shweta\Desktop\python\images\intagram.jpg" width="60px" height="60px" alt="intagram"></a>
+
+
+</body>
+
+</html>
